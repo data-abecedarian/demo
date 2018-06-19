@@ -1,0 +1,94 @@
+GITLABmobile_innovation_bi / market_statistics
+
+Search in this project
+ User activity
+Activity
+Files
+Commits
+Network
+Graphs
+Issues 0
+Merge Requests 0
+Wiki
+master
+
+
+ market_statistics   .gitignore
+3fe5431fe   add Pods in .gitignore Browse Code »
+陈靖贤Jenny 5 months ago  
+ .gitignore 318 Bytes editrawblamehistory remove
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+﻿# kdiff3 ignore
+*.orig
+
+# maven ignore
+target/
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+# package ignore (optional)
+# *.jar
+# *.war
+# *.zip
+# *.tar
+# *.tar.gz
+
+# pods ignore
+Pods/
+src/scala/
