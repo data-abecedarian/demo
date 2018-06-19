@@ -1,4 +1,4 @@
-package com.qunar.search.demo.mapreduce;
+package com.abecedarian.mapreduce;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.conf.Configuration;
