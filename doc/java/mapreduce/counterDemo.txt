@@ -1,23 +1,18 @@
-MapReduce counter计数器使用方法
+MapReduce入门java程序wordCount
 
-有输入文件:
-目录:hdfs /user/wirelessdev/result/demo/mr/input/input1.txt
+有一篇文章,摘录数据示例:
+The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
+It is designed to scale up from single servers to thousands of machines, each offering local computation and storage. Rather than rely on hardware to deliver high-availability,
+the library itself is designed to detect and handle failures at the application layer, so delivering a highly-available service on top of a cluster of computers, each of which may be prone to failures.
 
-目录存储数据示例:
-20180529,adr,dynamic,baidu_rtb,80282,79911
-20180529,ios,dynamic,total,2107079,593510
-20180601,total,dynamic,wifi_rtb,62990,50730
-20180601,other,dynamic,xiaomi_rtb,65658,15349
-
-现需要根据逗号分割的第二列不同来分组计数,例如
-第二列为adr的条数有x条,adr计数器计为x
-第二列为ios的条数有y条,ios计数器计为y
+现需要输出文章中各单词出现的次数
 
 执行MapReduce程序为:
-sudo -uwirelessdev hadoop jar  ${jarPath} com.abecedarian.mapreduce.WordCountDemo $input $output $reduceNum
+sudo -uwirelessdev hadoop jar  ${jarPath} com.qunar.market.demo.mapreduce.WordCountDemo $input $output $reduceNum
 
 参数说明:
 jarPath: 包含该类的jar包路径
-input:输入目录,多个目录以逗号分割,示例中input应为:/user/wirelessdev/result/demo/mr/input/input1.txt
-output:输出目录,示例中output可以为: /user/wirelessdev/tmp/demo/output/counter,注意若指定的输出目录已存在,程序将异常退出
-reduceNum:reduce的个数,示例中reduceNum为0(设为0相当于不进行reduce阶段)
+input:输入目录,多个目录以逗号分割,示例中input应为:/user/wirelessdev/result/demo/mr/input/wordcount.txt
+output:输出目录,示例中output可以为: /user/wirelessdev/tmp/demo/output/wordcount,注意若指定的输出目录已存在,程序将异常退出
+reduceNum:reduce的个数,根据数据大小,业务逻辑等综合考虑设置多少reduce个数 (少数据量集建议2~8个左右)
+
