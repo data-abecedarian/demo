@@ -7,6 +7,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.compress.CompressionCodec;
 import org.apache.hadoop.io.compress.GzipCodec;
+import org.apache.hadoop.io.compress.Lz4Codec;
 import org.apache.hadoop.mapred.JobPriority;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -45,6 +46,7 @@ public class WordCountDemo extends Configured implements Tool {
         conf.set("mapred.child.reduce.java.opts", "-Xmx8192m");
         conf.set("mapreduce.reduce.java.opts", "-Xmx8192m");
         conf.set("mapred.job.priority", JobPriority.VERY_HIGH.name());
+        conf.setClass("mapred.map.output.compression.codec", Lz4Codec.class, CompressionCodec.class);
         conf.setBoolean("mapred.output.compress", true);
         conf.setClass("mapred.output.compression.codec", GzipCodec.class, CompressionCodec.class);
 
